@@ -1,0 +1,19 @@
+version: 2.1
+
+jobs:
+  validate:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - run:
+          name: Validate integration repository
+          command: |
+            test -s README.md
+            test -s AGENTS.md
+            test -s mergify.yml
+
+workflows:
+  validate:
+    jobs:
+      - validate
