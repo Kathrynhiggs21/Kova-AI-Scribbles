@@ -11,7 +11,7 @@ jobs:
           command: |
             test -s README.md
             test -s AGENTS.md
-            test -s mergify.yml
+            test -s .github/copilot-instructions.md
 
 workflows:
   validate:
